@@ -8,9 +8,16 @@ let package = Package(
         .plugin(name: "Generate Strings File Symbols", targets: ["Generate Strings File Symbols"]),
         .executable(name: "generate-symbols-tool", targets: ["generate-symbols-tool"]),
     ],
-    dependencies: [],
+    dependencies: [
+        .package(url: "https://github.com/danielctull-playground/FileGenerator", branch: "main")
+    ],
     targets: [
-        .executableTarget(name: "generate-symbols-tool", dependencies: []),
+        .executableTarget(name: "generate-symbols-tool", dependencies: [
+            .product(name: "FileGenerator", package: "FileGenerator"),
+        ]),
+        .testTarget(name: "GenerateTests", dependencies: [
+            .product(name: "FileGenerator", package: "FileGenerator"),
+        ]),
         .plugin(name: "Generate Strings File Symbols", capability: .buildTool(), dependencies: ["generate-symbols-tool"]),
     ]
 )

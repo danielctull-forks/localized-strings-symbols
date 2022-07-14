@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "filegenerator",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/danielctull-playground/FileGenerator",
+      "state" : {
+        "branch" : "main",
+        "revision" : "10bf7e427a47883448a40fe71056a85be2c19c51"
+      }
+    }
+  ],
+  "version" : 2
+}
