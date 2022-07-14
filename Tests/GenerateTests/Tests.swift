@@ -113,7 +113,6 @@ struct StaticFunc<C: Content>: Content {
         self.content = content()
     }
 
-    @ContentBuilder
     var body: some Content {
         "static func \(name)(\(parameters)) {"
         content.indented()
@@ -135,7 +134,6 @@ struct Extension<C: Content>: Content {
         self.content = content()
     }
 
-    @ContentBuilder
     var body: some Content {
         "extension \(name) {"
         content.indented()
